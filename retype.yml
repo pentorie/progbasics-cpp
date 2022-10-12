@@ -1,7 +1,7 @@
 input: .
 output: .retype
 branding:
-  title: Основы алгортмизации и программирования
+  title: ОАиП
   label: ТТИТ
 links:
   - text: Moodle
