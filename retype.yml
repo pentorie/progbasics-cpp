@@ -1,0 +1,10 @@
+input: .
+output: .retype
+branding:
+  title: Основы алгортмизации и программирования
+  label: ТТИТ
+links:
+  - text: Moodle
+    link: https://moodle.tomtit-tomsk.ru/
+footer:
+  copyright: "&copy; Copyright . All rights reserved."
