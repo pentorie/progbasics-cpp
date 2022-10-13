@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.718972031217">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.718981925246">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,11 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.718972031217" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.718981925246" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.718972031217" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.718981925246" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.718972031217" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.718981925246" data-turbo-eval="false" defer></script>
+    <script id="mermaid-js" type="text/javascript" src="../../resources/js/mermaid.js?v=2.4.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -245,6 +246,32 @@ S5: Завершение программы.</code></pre>
     вывод vasya+misha
 кон</code></pre>
 </doc-codeblock></div>
+<p>Алгоритмический язык появился очень давно (1958 год) и изначально был полноценным языком программирования (ALGOL), одним из первых высокого уровня.</p>
+<p>Хотя язык сам по себе оказал заметное влияние на все разработанные позднее императивные языки программирования — в частности, на язык Pascal и C++, после появления новых языков Алгол начал терять свою актуальность, а сейчас не используется вовсе - ни для разработки, ни для реального описания алгоритмов. ¯\<em>_(ツ)</em>_/¯</p>
+<doc-anchor-target id="схематическое-описание-блок-схемы">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#схематическое-описание-блок-схемы">#</doc-anchor-trigger>
+        <span>Схематическое описание (блок-схемы)</span>
+    </h2>
+</doc-anchor-target>
+<p><em>И тут пришло самое страшное...</em></p>
+<p>Блок-схемы вызывают у многих студентов неприязнь и недопонимание, но я думаю что это связано с тем, что изначально не объясняется, зачем оно нужно и как с этим правильно работать. <strong>Я постараюсь это исправить!</strong></p>
+<p>Сами по себе блок-схемы являются достаточно простым способом описать вашу систему <em>графически</em> в виде базовых блоков, исходя из которых строится вся программа. Во многом блок-схемы похожи на словесное описание, только вместо жёсткого указания текстом алгоритм работы программы, мы будем это делать с помощью фигурных элементов. Каждый из них осуществляет строго определённую роль, дабы не допускать путаницы при чтении схемы.</p>
+<p>Разберём базовые блоки:</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">graph TB
+    AG(Начало/конец)
+    style AG rx:25,ry:50 
+    B[Операция/процесс]
+    C[/Ввод-вывод/]
+    D{Условие}
+    E(&quot;&amp;nbsp;&amp;nbsp;A&amp;nbsp;&amp;nbsp;&quot;)
+    style E rx:50,ry:50
+    </pre></div>
+<p><em>Здесь указаны основные блоки, которые нам в дальнейшем пригодятся.</em></p>
+<p>Блок с буквой А называется <strong>соединителем</strong> и он используется в тех случаях, когда нам не хватает места чтобы полностью разместить блок-схему и нам требуется её перенос.</p>
+<p>Пока что стоит просто запомнить их в лицо, ещё несколько блоков и то, как они связываются и выглядят на практике, разберём в следующей теме.</p>
+<p>Но несмотря на свою понятность и функциональность, у блок-схем есть один значительный недостаток: они не могут отражать алгоритмы, которые реализуются во взаимодействии абстракций при объектно-ориентированном подходе (<em>т.е. с помощью них строятся только достаточно простые описания</em>).
+Для описания более сложных и масштабируемых систем с большей гибкостью используются нотации <strong>UML</strong>, которые в частном случае рассматриваются в дисциплине &quot;Проектирование и дизайн информационных систем&quot;, поэтому их мы покрывать не будем.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -311,6 +338,6 @@ S5: Завершение программы.</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Алгоритмы и их описание", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Алгоритмы и их описание", level: 2, icon: "file", hasPrism: false, hasMermaid: true, hasMath: false }</script>
 </body>
 </html>
