@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.718969471955">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.718971051294">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.718969471955" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.718971051294" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.718969471955" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.718971051294" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.718969471955" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.718971051294" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -220,6 +220,22 @@ S4: Выводим значение vasya+misha;
 S5: Завершение программы.</code></pre>
 </doc-codeblock></div>
 <p>Тут я довольно сильно сократил количество шагов, задавая значение переменной при её создании, а также выводя сумму сразу, не используя дополнительную переменную. Подробнее об этом будет показываться и рассказываться также на примерах с кодом.</p>
+<doc-anchor-target id="алгоритмический-язык">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#алгоритмический-язык">#</doc-anchor-trigger>
+        <span>Алгоритмический язык</span>
+    </h2>
+</doc-anchor-target>
+<p>Построение алгоритмов на алгоритмическом языке приближено непосредственно к написанию кода, но не привязано к архитектуре компьютера, его устройству и языку программирования. При знании базиса этого языка можно описывать то, как должна работать программа, и это описание можно легко перенести на любой другой, реально существующий язык программирования и выполнить программу. Рассмотрим всё ту же задачу про Васю и Мишу и представим её на алгоритмическом языке:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">algol</div>
+<pre class="language-none"><code v-pre class="language-none">   алг сколько всего яблок
+    цел vasya, misha, sum
+    нач ввод vasya, misha
+	    sum := vasya+misha
+	    вывод sum
+	кон</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
