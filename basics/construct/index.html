@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.718981987602">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.719379869203">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Алгоритмические конструкции</title>
     <meta name="title" content="Алгоритмические конструкции">
+    <meta name="description" content="Итак, в прошлой теме мы рассмотрели каким образом можно составлять алгоритмы для наших программ: словесно" />
 
     <!-- Canonical -->
     <link rel="canonical" href="/basics/construct/" />
@@ -19,19 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/basics/construct/">
     <meta property="og:title" content="Алгоритмические конструкции">
+    <meta property="og:description" content="Итак, в прошлой теме мы рассмотрели каким образом можно составлять алгоритмы для наших программ: словесно">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/basics/construct/">
     <meta property="twitter:title" content="Алгоритмические конструкции">
+    <meta property="twitter:description" content="Итак, в прошлой теме мы рассмотрели каким образом можно составлять алгоритмы для наших программ: словесно">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.718981987602" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.719379869203" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.718981987602" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.719379869203" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.718981987602" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.719379869203" data-turbo-eval="false" defer></script>
+    <script id="mermaid-js" type="text/javascript" src="../../resources/js/mermaid.js?v=2.4.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -169,6 +173,68 @@
         <span>Алгоритмические конструкции</span>
     </h1>
 </doc-anchor-target>
+<p>Итак, в прошлой теме мы рассмотрели каким образом можно составлять алгоритмы для наших программ: <em>словесно</em>, <em>алгоритмическим языком</em> и <em>блок-схемами</em>. А какие алгоритмы бывают в принципе? Для того чтобы учитывать все случаи в алгоритмах у нас предусматривается три базовые конструкции: <strong>следования</strong>, <strong>ветвления</strong> и <strong>повторения</strong>.</p>
+<doc-anchor-target id="линейные-алгоритмы-следования">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#линейные-алгоритмы-следования">#</doc-anchor-trigger>
+        <span>Линейные алгоритмы (следования)</span>
+    </h2>
+</doc-anchor-target>
+<p>Буквально означают и описываются таким образом, что все этапы работы программы выполняются строго последовательно и друг за другом. Пример словесного описания такого алгоритма приводился в прошлой статье задачкой про Васю и Мишу.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">S1: Начало программы; 
+S2: Создаём переменную vasya; 
+S3: Создаём переменную misha; 
+S4: Присваиваем переменной vasya значение 5; 
+S5: Присваиваем переменной misha значение 6; 
+S6: Создаём переменную sum; 
+S7: Записываем в переменную sum сумму значений из vasya и misha 
+S8: Выводим значение sum; 
+S9: Завершение программы.</code></pre>
+</doc-codeblock></div>
+<p>В формате блок-схемы данный алгоритм будет выглядеть следующим образом:</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">graph TB
+    AG(&quot;&amp;nbsp;Начало&amp;nbsp;&quot;)
+    style AG rx:25,ry:50 
+    AG --&gt; B[&quot;var vasya, misha;&quot;]
+    B --&gt; C[&quot;vasya = 5;&lt;br&gt;misha = 6;&quot;]
+    C --&gt; D[&quot;var sum = vasya + misha;&quot;]
+    D --&gt; E[/Вывод sum/]
+    E --&gt; ND
+    ND(&quot;&amp;nbsp;&amp;nbsp;Конец&amp;nbsp;&amp;nbsp;&quot;)
+    style ND rx:25,ry:50</pre></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Обратите внимание, что для создания новых переменных мы используем сокращение <strong>var</strong> (от англ. <em>variable</em>). Если вы работаете со строго типизированными языками программирования вместо var желательно указывать тип переменной (int, float и т.д.).</p>
+        </div>
+    </div>
+</div>
+<p>Давайте разберём каждый блок поочерёдно:</p>
+<ol>
+<li>Начинаем работу программы</li>
+<li>Создаём переменные vasya и misha</li>
+<li>Задаём значения переменным vasya и misha</li>
+<li>Создаём переменную sum и задаём ей значение суммы vasya и misha</li>
+<li>Выводим значение sum в консоль</li>
+<li>Заканчиваем работу программы</li>
+</ol>
+<p>Давайте разберём блоки, которые тут присутствуют и что они делают.</p>
+<ul>
+<li>Прямоугольник - <strong>действие</strong> (<em>или операция</em>). Этот блок мы используем в тех случаях, когда вводим в систему новые переменные или осуществляем базовые операции: изменение значения, математические операции и т.д.</li>
+<li>Параллелограмм - <strong>данные</strong> (<em>или ввод-вывод</em>). С помощью этого блока мы выводим значения переменных или произвольный текст в консоль, а также считываем значения вводом с клавиатуры; так пользователь может указывать значения переменных по ходу работы программы.</li>
+<li>Почти овал (закругленный прямоугольник) - <strong>ограничитель</strong>. Этот блок указывает, где у нас начинается программа и где она заканчивается.</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -228,6 +294,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Алгоритмические конструкции", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Алгоритмические конструкции", level: 2, icon: "file", hasPrism: false, hasMermaid: true, hasMath: false }</script>
 </body>
 </html>
