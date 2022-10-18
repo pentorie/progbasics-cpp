@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.719382493809">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.719390211292">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -21,20 +21,22 @@
     <meta property="og:url" content="/basics/construct/">
     <meta property="og:title" content="Алгоритмические конструкции">
     <meta property="og:description" content="Итак, в прошлой теме мы рассмотрели каким образом можно составлять алгоритмы для наших программ: словесно">
+    <meta property="og:image" content="https://i.postimg.cc/fTv96Htv/sdaf-drawio.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/basics/construct/">
     <meta property="twitter:title" content="Алгоритмические конструкции">
     <meta property="twitter:description" content="Итак, в прошлой теме мы рассмотрели каким образом можно составлять алгоритмы для наших программ: словесно">
+    <meta property="twitter:image" content="https://i.postimg.cc/fTv96Htv/sdaf-drawio.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.719382493809" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.719390211292" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.719382493809" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.719390211292" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.719382493809" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.719390211292" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" type="text/javascript" src="../../resources/js/mermaid.js?v=2.4.0" defer></script>
 </head>
 <body>
@@ -292,6 +294,54 @@ S7. Завершение работы программы.</code></pre>
         <span>Циклические алгоритмы (повторения)</span>
     </h2>
 </doc-anchor-target>
+<p>Несмотря на всю силу линейных и условных конструкций, у них есть один нюанс: действия, которые в них происходят однократны и иногда из-за этого решить ряд задач просто невозможно. К примеру, задачи на расчёт факториала и последовательности Фибоначчи. Конечно мы можем расписать их вручную, но что если речь заходит об <strong>очень больших</strong> последовательностях? Рассмотрим одну задачу:</p>
+<blockquote>
+<p>Пользователь вводит с клавиатуры число. Рассчитать факториал этого числа.</p>
+</blockquote>
+<p>Для простоты рассмотрения возьмём число <strong>5</strong>.</p>
+<p>Факториал пяти это 1 * 2 * 3 * 4 * 5, т. е. помимо вводимого нами числа мы должны брать в рассмотрение все предыдущие числа. И тут на помощь приходят <strong>циклы</strong>!</p>
+<p>Циклы сами по себе упрощают задачу обращения к однотипным элементам, а также сокращают количество используемого в программе кода. А некоторые фишки возможно реализовать только с помощью циклов.</p>
+<p>Во всех блок-схемах у нас будет абсолютно одинаковое начало.<br />
+Мы создаём переменные:</p>
+<ul>
+<li><strong>N</strong> (число, факториал которого считаем);</li>
+<li><strong>fact</strong> (куда будем сохранять сам факториал числа, сразу <em>приравниваем к <strong>1</strong></em> для перемножения);</li>
+<li><strong>i</strong> (переменная-счётчик, объяснение будет далее).</li>
+</ul>
+<p>Циклы можно описывать тремя разными способами; можете выбрать тот, который вам будет понятнее всего.</p>
+<doc-anchor-target id="способ-1-через-блок-цикла-шестиугольник">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#способ-1-через-блок-цикла-шестиугольник">#</doc-anchor-trigger>
+        <span><strong>Способ 1</strong>: Через блок цикла (шестиугольник)</span>
+    </h3>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://i.postimg.cc/fTv96Htv/sdaf-drawio.png" alt="sdaf-drawio.png" />
+    <figcaption class="caption">sdaf-drawio.png</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="способ-2-через-ограничители-циклов-loop-limits">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#способ-2-через-ограничители-циклов-loop-limits">#</doc-anchor-trigger>
+        <span><strong>Способ 2</strong>: Через ограничители циклов (loop limits)</span>
+    </h3>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://i.postimg.cc/44pG4q1p/sdaf-drawio-2.png" alt="sdaf-drawio-2.png" />
+    <figcaption class="caption">sdaf-drawio-2.png</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="способ-3-через-условие-и-возврат-в-него">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#способ-3-через-условие-и-возврат-в-него">#</doc-anchor-trigger>
+        <span>Способ 3: Через условие и возврат в него</span>
+    </h3>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://i.postimg.cc/BQhVJBRx/sdaf-drawio-1.png" alt="sdaf-drawio-1.png" />
+    <figcaption class="caption">sdaf-drawio-1.png</figcaption>
+</figure>
+</p>
 
                                 
                                 <!-- Required only on API pages -->
