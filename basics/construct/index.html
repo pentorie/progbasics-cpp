@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.719390211292">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.719392676075">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,11 +32,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.719390211292" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.719392676075" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.719390211292" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.719392676075" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.719390211292" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.719392676075" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" type="text/javascript" src="../../resources/js/mermaid.js?v=2.4.0" defer></script>
 </head>
 <body>
@@ -342,6 +342,48 @@ S7. Завершение работы программы.</code></pre>
     <figcaption class="caption">sdaf-drawio-1.png</figcaption>
 </figure>
 </p>
+<doc-anchor-target id="пояснительная-часть-циклов">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#пояснительная-часть-циклов">#</doc-anchor-trigger>
+        <span>Пояснительная часть циклов</span>
+    </h3>
+</doc-anchor-target>
+<p>В каждом случае в циклах мы используем специальную переменную-счётчик <strong>i</strong> (она может называться как угодно), по которой мы определяем, будет продолжать свою работу цикл или нет. Давайте попробуем представить работу нашего алгоритма максимально подробно.</p>
+<ul>
+<li>Вводим в систему переменные <strong>N</strong>, <strong>fact</strong> = 1 и <strong>i</strong>;</li>
+<li>Вводим значение <strong>N</strong> с клавиатуры (<em>к примеру вводим 3</em>);</li>
+<li><strong>Начинаем цикл</strong><br>Стартовое значение <strong>i: 1</strong><br>Конечное значение <strong>i: N</strong> (<em>введенное с клавиатуры значение, подставится 3</em>)<br>Размер шага <strong>i: 1</strong> (<em>после выполнения всех действий в цикле переменная увеличивается на 1</em>)</li>
+<li>
+<ol>
+<li>Проверка условия от <strong>i до N (i &lt;= N)</strong> &gt;&gt; 1 &lt;= 3?<br>Да, значит fact = fact * i (1 * 1) = <strong>1</strong>;<br>Увеличиваем i на 1 (делаем i = 2).</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Проверка условия от <strong>i до N (i &lt;= N)</strong> &gt;&gt; 2 &lt;= 3?<br>Да, значит fact = fact * i (1 * 2) = <strong>2</strong>;<br>Увеличиваем i на 1 (делаем i = 3).</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Проверка условия от <strong>i до N (i &lt;= N)</strong> &gt;&gt; 3 &lt;= 3?<br>Да, значит fact = fact * i (2 * 3) = <strong>6</strong>;<br>Увеличиваем i на 1 (делаем i = 4).</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Проверка условия от <strong>i до N (i &lt;= N)</strong> &gt;&gt; 4 &lt;= 3?<br>Нет, значит прерываем работу цикла.</li>
+</ol>
+</li>
+<li><strong>Завершение цикла</strong></li>
+<li>Выводим получившееся значение переменной fact (<strong>6</strong>).</li>
+</ul>
+<p>При входе в цикл у нас сравнивается переменная-счётчик с каким-то заданным значением (это может быть переменная, константа или число). Если условие выполняется, то начнёт работу код написанный в цикле, а по окончанию изменится значение счётчика на заданный шаг и запустится следующая проверка условия. Код в цикле будет повторяться до тех пор, пока выполняется условие его работы.</p>
+<doc-anchor-target id="в-дополнение">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#в-дополнение">#</doc-anchor-trigger>
+        <span>В дополнение</span>
+    </h2>
+</doc-anchor-target>
+<p>Также важно понимать, что разные конструкции вполне себе сочетаемы и могут вкладываться друг в друга (к примеру, в циклы можно помещать условия и наоборот). Также циклы могут работать не только от 1 до 5, но и от 5 до 1 (в обратном направлении), а размер шага не всегда должен быть единицей (так можно проскакивать четные/нечетные элементы). Применение таким фишкам будет показано в дальнейших материалах.</p>
 
                                 
                                 <!-- Required only on API pages -->
